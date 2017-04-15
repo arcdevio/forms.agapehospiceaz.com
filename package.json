@@ -1,0 +1,22 @@
+{
+  "name": "forms.agapehospiceaz.com",
+  "version": "1.0.0",
+  "description": "forms.agapehospiceaz.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebCab-Design/forms.agapehospiceaz.com.git"
+  },
+  "author": "WebCab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebCab-Design/forms.agapehospiceaz.com/issues"
+  },
+  "homepage": "https://github.com/WebCab-Design/forms.agapehospiceaz.com#readme",
+  "dependencies": {
+    "swathe": "^2.0.6"
+  }
+}
