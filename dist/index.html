@@ -10,114 +10,45 @@
 	<link rel="stylesheet" href="index.css">
 
 	<script src="assets/swathe.min.js"></script>
+	<script src="/assets/js/rutta.min.js"></script>
 	<script src="index.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
 </head>
 <style media="screen">
 
 </style>
-<body>
-	<section>
-		<div class="row">
-			<div class="col-xs-12 col-sm-8 form-sec">
-				<form class="form row" action="#" method="post">
-					<fieldset>
-						<legend><h1>Incident Report</h1></legend>
-						<fieldset>
-							<legend>General Incident Info</legend>
-							<input class="col-xs-8" type="text" name="Patient Name" placeholder="Patient Name">
-							<input class="col-xs-3" type="text" name="Date/Time of Incident" placeholder="Date/Time of Incident">
-							<input class="col-xs-5" type="text" name="Type of Incident" placeholder="Type of Incident">
-							<input class="col-xs-6" type="text" name="Location(facility) of Incident" placeholder="Location(facility) of Incident">
-						</fieldset>
-						<fieldset>
-							<legend>Individuals involved</legend>
-							<label for="#1 Individual Name">Status (i.e. Employee/Family/Other - Specify)</label>
-							<input class="col-xs-8" type="text" name="#1 Individual Name" placeholder=" #1 Individual Name">
-							<input class="col-xs-3" type="text" name="Status" placeholder="Status">
-							<input class="col-xs-8" type="text" name="#2 Individual Name" placeholder=" #2 Individual Name">
-							<input class="col-xs-3" type="text" name="Status" placeholder="Status">
-						</fieldset>
-						<fieldset class="radio">
-							<legend>Description of Incident</legend>
-							<textarea class="col-xs-11" name="Description of Incident" rows="8" placeholder="Description of Incident..."></textarea>
-							<label for="injury">Incident Resulted in Injury</label>
-							<input type="radio" name="injury" value="yes" checked><span>Yes</span>
-							<input type="radio" name="injury" value="no"><span>No</span>
-							<label for="Description of Injury">If "Yes" Describe Injury</label>
-							<textarea class="col-xs-11" name="Description of Injury" rows="8" placeholder="Description of Injury..."></textarea>
-							<label for="injury-personnel">Incident Resulted in Injury of Hospice Personnel</label>
-							<input type="radio" name="injury-personnel" value="yes" checked><span>Yes</span>
-							<input type="radio" name="injury-personnel" value="no"><span>No</span>
-							<label for="Description of Injury Hospice Personnel">If "Yes" Describe Injury</label>
-							<textarea class="col-xs-11" name="Description of Injury Hospice Personnel" rows="8" placeholder="Description of Injury Hospice Personnel..."></textarea>
-							<label for="Action Taken by Physician">Action Taken by Physician</label>
-							<textarea class="col-xs-11" name="Action Taken by Physician" rows="8" placeholder="Action(s) Taken..."></textarea>
-							<label for="List any drugs">List any drugs taken by the patient within 8 hours before the incident, including dose, route and time administered, especially for reporting falls.</label>
-							<textarea class="col-xs-11" name="List any drugs" rows="8" placeholder="List any drugs"></textarea>
-							<label for="Name of person(s) who requested follow-up">Name of person(s) who requested follow-up or needed notification; indicate who was notified, the time and by whom:</label>
-							<textarea class="col-xs-11" name="Name of person(s) who requested follow-up" rows="4" placeholder="Name of person(s) who requested follow-up..."></textarea>
-							<label for="Reported to">Incident Reported To:</label>
-							<div name="Reported to">
-								<input type="checkbox" name="RN Case Manager" value="RN Case Manager"><span>RN Case Manager</span>
-								<input type="checkbox" name="Medical Director" value="Medical Director"><span>Medical Director</span>
-								<input type="checkbox" name="Provider" value="Provider"><span>Provider</span>
-								<input type="checkbox" name="Administrator" value="Administrator"><span>Administrator</span>
-								<input type="checkbox" name="Clinical Services Director" value="Clinical Services Director"><span>Clinical Services Director</span>
-								<input type="checkbox" name="Clinical Supervisor" value="Clinical Supervisor"><span>Clinical Supervisor</span>
-							</div>
-						</fieldset>
-						<fieldset>
-							<legend>Report Completed By:</legend>
-							<input class="col-xs-8" type="text" name="Report Completed By" placeholder="Full Name">
-							<input class="col-xs-3" type="date" name="date">
-							<div class="no-print">
-								<button id="download-btn" type="button" name="button">Download PDF</button>
-							</div>
-						</fieldset>
-						<fieldset class="special">
-							<legend>*For Managers ONLY*</legend>
-							<label for="Investigators Comments/Findings">Investigator's Comments/Findings</label>
-							<textarea class="col-xs-11" name="Investigators Comments/Findings" rows="8" placeholder="Investigator’s Comments/Findings..."></textarea>
-							<label for="Actions Taken">Action(s) Taken</label>
-							<textarea class="col-xs-11" name="Actions Taken" rows="8" placeholder="Action(s) Taken"></textarea>
-							<label for="Investigation Completed By">Investigation Completed By:</label>
-							<input class="col-xs-8" type="text" name="Investigation Completed By" placeholder="Manager Full Name">
-							<input class="col-xs-3" type="date" name="date">
-						</fieldset>
-					</fieldset>
-				</form>
-			</div>
-			<div class="col-xs-12 col-md-4 side-bar no-print">
-				<section>
-					<h1>Other Forms</h1>
-					<ul>
-						<li>MAHC 10</li>
-						<li>Time Off Request</li>
-					</ul>
-				</section>
-			</div>
+
+<section r-view="main">
+	<div class="form-icons">
+		<div>
+			<a href="/incident-report">CLICK ME</a>
 		</div>
-	</section>
-  </div>
+	</div>
+</section>
+
+<body>
 	<script>
-		var button = document.getElementById('download-btn');
-		function savePDF () {
-			var pdf = new jsPDF();
-			pdf.save(window.location.pathname + '.pdf');
-		}
-		button.addEventListener('click', function(){
-			savePDF();
-			console.log("clic");
-		});
-
-		function textAreaAdjust(o) {
-			o.style.height = "1px";
-			o.style.height = (25+o.scrollHeight)+"px";
-		}
-	</script>
-	<script type="text/javascript">
-
+		Rutta.router({
+			name: "main",
+			routes: [
+				{
+					title: "Incident Report",
+					path: "/incident-report",
+					handler: function (req, res) {
+						return res.file('/forms/incident-report.html', function () {
+							var button = document.getElementById('download-btn');
+						 	
+							button.addEventListener('click', function(){
+								function savePDF () {
+									var pdf = new jsPDF();
+									pdf.save(window.location.pathname + '.pdf');
+								}
+							});
+						});
+					}
+				}
+			]
+		}).listen();
 
 	</script>
 </body>
