@@ -1,0 +1,33 @@
+<div class="row">
+	<div class="col-xs-10 form-sec">
+		<form class="form row" action="#" method="post">
+			<fieldset>
+				<legend><h1>Incident Report</h1></legend>
+				<fieldset>
+					<legend>General Incident Info</legend>
+					<input class="col-xs-8" type="text" name="Patient Name" placeholder="Patient Name">
+					<input class="col-xs-3" type="text" name="Date/Time of Incident" placeholder="Date/Time of Incident">
+					<input class="col-xs-5" type="text" name="Type of Incident" placeholder="Type of Incident">
+					<input class="col-xs-6" type="text" name="Location(facility) of Incident" placeholder="Location(facility) of Incident">
+				</fieldset>
+				<fieldset>
+					<legend>Individuals involved</legend>
+					<p>Status (i.e. Employee/Family/Other - Specify)</p>
+					<input class="col-xs-8" type="text" name="#1 Individual Name" placeholder=" #1 Individual Name">
+					<input class="col-xs-3" type="text" name="Status" placeholder="Status">
+					<input class="col-xs-8" type="text" name="#2 Individual Name" placeholder=" #2 Individual Name">
+					<input class="col-xs-3" type="text" name="Status" placeholder="Status">
+				</fieldset>
+				<p>Description of Incident</p>
+				<textarea class="col-xs-11" name="Description of Incident" rows="8" placeholder="Description of Incident..."></textarea>
+
+				<p>Incident Resulted in Injury</p>
+				<input type="radio" name="injury" value="yes" checked><span>Yes</span>
+				<input type="radio" name="injury" value="no"><span>No</span>
+
+				<p>If "Yes" Describe Injury</p>
+				<textarea class="col-xs-11" name="Description of Injury" rows="8" placeholder="Description of Injury..."></textarea>
+			</fieldset>
+		</form>
+	</div>
+</div>
