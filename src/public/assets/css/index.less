@@ -5,11 +5,16 @@
 @white: #ffffff;
 @red: #FC6959;
 
-* {
+*  {
 	margin: 0;
 	padding: 0;
-	transition: 300ms ease;
-	font-family: 'helvetica', sans-serif;
+	font-size: 1rem;
+	transition: all 300ms ease;
+	-o-transition: all 300ms ease;
+	-ms-transition: all 300ms ease;
+	-moz-transition: all 300ms ease;
+	-webkit-transition: all 300ms ease;
+	font-family: 'Open Sans', sans-serif;
 }
 body {
 	background-color: lighten(@gray, 10%);
@@ -98,6 +103,7 @@ button:hover {
 	background: darken(@red, 10%);
 }
 .section-tiles {
+	padding: 6%;
 	> div {
 		display: inline-block;
 		background-color: white;
@@ -110,6 +116,12 @@ button:hover {
 		box-shadow: 1px 1px 2px 0px darken(@light-grey, 10%);
 		&:hover {
 			box-shadow: 1px 1px 2px 2px darken(@light-grey, 10%);
+		}
+		i {
+			display: block;
+			font-size: 2rem;
+			padding: 1rem;
+			color: @red;
 		}
 	}
 	a {

@@ -1,8 +1,13 @@
 * {
   margin: 0;
   padding: 0;
-  transition: 300ms ease;
-  font-family: 'helvetica', sans-serif;
+  font-size: 1rem;
+  transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  font-family: 'Open Sans', sans-serif;
 }
 body {
   background-color: #e0e4ea;
@@ -93,6 +98,9 @@ button {
 button:hover {
   background: #fb3c27;
 }
+.section-tiles {
+  padding: 6%;
+}
 .section-tiles > div {
   display: inline-block;
   background-color: white;
@@ -106,6 +114,12 @@ button:hover {
 }
 .section-tiles > div:hover {
   box-shadow: 1px 1px 2px 2px #dddddd;
+}
+.section-tiles > div i {
+  display: block;
+  font-size: 2rem;
+  padding: 1rem;
+  color: #FC6959;
 }
 .section-tiles a {
   color: #FC6959;
