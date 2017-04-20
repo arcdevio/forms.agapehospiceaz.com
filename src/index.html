@@ -28,12 +28,15 @@
 	</header>
 	<main>
 		<div r-view="main"></div>
+
 	</main>
 	<footer>
 
 	</footer>
 	<!-- Scripts -->
 	<script>
+	var pdf = new jsPDF();
+
 		Rutta.router({
 			name: "main",
 			routes: [
@@ -50,12 +53,25 @@
 					path: "/incident-report",
 					handler: function (req, res) {
 						return res.file('/public/forms/incident-report.html', function () {
-							var button = document.getElementById('download-btn');
 
+							var button = document.getElementById('download-btn');
 							button.addEventListener('click', function(){
 								function savePDF () {
-									var pdf = new jsPDF();
 									pdf.save(window.location.pathname + '.pdf');
+								}
+								savePDF();
+							});
+
+							var textarea = document.getElementsByTagName('textarea');
+							function getTextarea () {
+								for (var i = 0; i < textarea.length; i++) {
+									return textarea[i];
+								}
+							}
+							getTextarea.addEventListener('keypress', function() {
+								if (this.scrollTop != 0){
+									console.log(this.scrollTop);
+								   this.style.height = this.scrollHeight + "px";
 								}
 							});
 						});
