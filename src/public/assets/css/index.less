@@ -1,4 +1,5 @@
 @gray: #C1CAD6;
+@light-grey: #f6f6f6;
 @green: #62DBAA;
 @black: #4F4F4F;
 @white: #ffffff;
@@ -96,29 +97,24 @@ button {
 button:hover {
 	background: darken(@red, 10%);
 }
-.submits > div {
-	padding: 1rem;
-	text-align: center;
-	margin-right: 1rem;
-	display: inline-block;
-	background-color: #E4E9F4;
-}
-
-.add-user {
-	border-top: 4px solid @red !important;
-	background: @white;
-	padding: 2rem;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	&:hover {
-		background-color: @white !important;
-		cursor: inherit !important;
-	}
-	input {
-		width: 25%;
+.section-tiles {
+	> div {
 		display: inline-block;
+		background-color: white;
+		padding: 2rem;
+		margin-right: 0.5rem;
+		margin-bottom: 0.5rem;
+		box-sizing: border-box;
+		text-align: center;
+		vertical-align: top;
+		box-shadow: 1px 1px 2px 0px darken(@light-grey, 10%);
+		&:hover {
+			box-shadow: 1px 1px 2px 2px darken(@light-grey, 10%);
+		}
+	}
+	a {
+		color: @red;
+
 	}
 }
 .form-sec {

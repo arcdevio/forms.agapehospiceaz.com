@@ -5,12 +5,12 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title></title>
-	<link rel="stylesheet" href="/assets/css/flexboxgrid.min.css">
-	<link rel="stylesheet" href="print.css">
-	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="public/assets/css/flexboxgrid.min.css">
+	<link rel="stylesheet" href="public/assets/css/print.css">
+	<link rel="stylesheet" href="public/assets/css/index.css">
 
-	<script src="assets/swathe.min.js"></script>
-	<script src="/assets/js/rutta.min.js"></script>
+	<script src="public/assets/js/swathe.min.js"></script>
+	<script src="public/assets/js/rutta.min.js"></script>
 	<script src="index.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
 </head>
@@ -18,26 +18,36 @@
 
 </style>
 
-<section r-view="main">
-	<div class="form-icons">
-		<div>
-			<a href="/incident-report">CLICK ME</a>
-		</div>
-	</div>
-</section>
-
 <body>
+	<header>
+
+	</header>
+	<main>
+		<div r-view="main"></div>
+	</main>
+	<footer>
+
+	</footer>
+	<!-- Scripts -->
 	<script>
 		Rutta.router({
 			name: "main",
 			routes: [
 				{
+					title: "Agape Forms",
+					path: "/",
+					handler: function (req, res) {
+					 	return res.file('public/index.html', function (){
+						});
+					}
+				},
+				{
 					title: "Incident Report",
 					path: "/incident-report",
 					handler: function (req, res) {
-						return res.file('/forms/incident-report.html', function () {
+						return res.file('/public/forms/incident-report.html', function () {
 							var button = document.getElementById('download-btn');
-						 	
+
 							button.addEventListener('click', function(){
 								function savePDF () {
 									var pdf = new jsPDF();
