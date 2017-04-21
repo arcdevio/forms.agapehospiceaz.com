@@ -4,7 +4,6 @@
 @black: #4F4F4F;
 @white: #ffffff;
 @red: #FC6959;
-
 *  {
 	margin: 0;
 	padding: 0;
@@ -19,17 +18,8 @@
 body {
 	background-color: lighten(@gray, 10%);
 }
-p {
-	margin: 0.5rem 0 0.5rem 0;
-}
-a {
-	text-decoration: none;
-	color: inherit;
-}
-section {
+main {
 	padding: 5%;
-	// max-width: 1024px;
-	background-color: white;
 	margin: auto;
 	box-sizing: border-box;
 }
@@ -45,8 +35,18 @@ header {
 		display: inline-block;
 	}
 }
+p {
+	margin: 0.5rem 0 0.5rem 0;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
 form {
+	padding: 8px;
 	max-width: 8in;
+	background: white;
+	box-sizing: border-box;
 }
 form input, form textarea {
 	border-bottom: 1px solid @gray !important;
@@ -82,10 +82,6 @@ fieldset {
 		margin-top: 0;
 	}
 }
-.special {
-	border: 2px dotted orange;
-	page-break-before: always;
-}
 legend {
 	font-weight: bold;
 	text-align: left;
@@ -106,17 +102,29 @@ button {
 button:hover {
 	background: darken(@red, 10%);
 }
+ol {
+	margin-left: 1rem;
+	li {
+		margin-top: 1rem;
+		font-weight: bold;
+	}
+}
+.special {
+	border: 2px dotted orange;
+	page-break-before: always;
+}
 .section-tiles {
 	padding: 6%;
-	> div {
-		display: inline-block;
-		background-color: white;
+	> a {
+		color: @red;
 		padding: 2rem;
+		background: white;
+		text-align: center;
+		vertical-align: top;
+		display: inline-block;
 		margin-right: 0.5rem;
 		margin-bottom: 0.5rem;
 		box-sizing: border-box;
-		text-align: center;
-		vertical-align: top;
 		box-shadow: 1px 1px 2px 0px darken(@light-grey, 10%);
 		&:hover {
 			box-shadow: 1px 1px 2px 2px darken(@light-grey, 10%);
@@ -128,18 +136,14 @@ button:hover {
 			color: @red;
 		}
 	}
-	a {
-		color: @red;
-
-	}
 }
-.form-sec {
-	background-color: white;
-	input, textarea {
-		text-align: left !important;
-		width: 100%;
-	}
-}
+// .form-sec {
+// 	background-color: white;
+// 	input, textarea {
+// 		text-align: left !important;
+// 		width: 100%;
+// 	}
+// }
 .radio {
 	input {
 		width: inherit;
@@ -154,14 +158,4 @@ button:hover {
 	padding: 1rem;
 	max-width: 33%;
 	font-weight: bold;
-}
-ol {
-	margin-left: 1rem;
-	li {
-		margin-top: 1rem;
-		font-weight: bold;
-	}
-}
-.side-bar {
-
 }
