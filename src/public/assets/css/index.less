@@ -9,11 +9,11 @@
 	margin: 0;
 	padding: 0;
 	font-size: 1rem;
-	transition: all 300ms ease;
-	-o-transition: all 300ms ease;
-	-ms-transition: all 300ms ease;
-	-moz-transition: all 300ms ease;
-	-webkit-transition: all 300ms ease;
+	// transition: all 300ms ease;
+	// -o-transition: all 300ms ease;
+	// -ms-transition: all 300ms ease;
+	// -moz-transition: all 300ms ease;
+	// -webkit-transition: all 300ms ease;
 	font-family: 'Open Sans', sans-serif;
 }
 body {
@@ -52,6 +52,7 @@ form input, form textarea {
 	margin: 0.5rem auto;
 	background: @gray;
 	height: auto;
+	overflow: hidden;
 	&:focus, &:active {
 		background: @white;
 		outline: none;
@@ -143,6 +144,20 @@ button:hover {
 		margin: 0.5rem;
 	}
 
+}
+.total {
+	background-color: lighten(@green, 20%);
+	color: @black;
+	padding: 1rem;
+	max-width: 33%;
+	font-weight: bold;
+}
+ol {
+	margin-left: 1rem;
+	li {
+		margin-top: 1rem;
+		font-weight: bold;
+	}
 }
 .side-bar {
 

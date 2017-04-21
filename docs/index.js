@@ -19,12 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	// 	}
 	// }
 	// getTextarea();
-	// // textarea[i].addEventListener('keypress', function() {
-	// // 	if (this.scrollTop != 0){
-	// // 		console.log(this.scrollTop);
-	// // 	   this.style.height = this.scrollHeight + "px";
-	// // 	}
-	// // });
+	
 	//
 
 	console.log('Loaded');

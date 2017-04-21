@@ -40,18 +40,40 @@
 			}
 		});
 	}
+	function addEventListenersToTextareas () {
+		var textareas = document.querySelectorAll('textarea');
+		for (var i = 0; i < textareas.length; i++) {
+			textareas[i].addEventListener('keyup', function(){
+				var scrollHeight = this.scrollHeight;
+				var initHeight = this.clientHeight;
 
-		function addEventListenersToTextareas () {
-			var textareas = document.querySelectorAll('textarea');
-			for (var i = 0; i < textareas.length; i++) {
-				textareas[i].addEventListener('focusin', function() {
-					this.style.height = '500px';
-				});
-				textareas[i].addEventListener('focusout', function() {
-					this.style.height = 'initial';
-				});
-			}
+				if (initHeight < scrollHeight) {
+					this.style.height = scrollHeight + 'px';
+				} else {
+					this.style.height = 'auto';
+				}	
+			});
 		}
+	}
+	function addEventListenerToRadio () {
+		var radios = document.querySelectorAll('input[type=radio]');
+		var totalInput = document.querySelector('.total');
+		var sections = {};
+
+		for (var i = 0, l = radios.length; i < l; i++) {
+			radios[i].addEventListener('click', function (){
+				var total = 0;
+				sections[this.name] = parseInt(this.value);
+
+				for (var name in sections) {
+					total += sections[name];
+				}
+				console.log(total);
+				totalInput.innerText = total;
+
+			});
+		}
+	}
 
 		Rutta.router({
 			name: 'main',
@@ -71,11 +93,29 @@
 						return res.file('/public/forms/incident-report.html', function () {
 							addEventListenersToTextareas();
 
-							var button = document.getElementById('download-btn');
-							button.addEventListener('click', function(){
-								pdf(document.querySelector('form'));
-							});
+							// var button = document.getElementById('download-btn');
+							// button.addEventListener('click', function(){
+							// 	pdf(document.querySelector('form'));
+							// });
 
+						});
+					}
+				},
+				{
+					name: 'Incident Investigation/Follow Up',
+					path: '/manager/incident-investigation',
+					handler: function (req, res) {
+						res.file('/public/forms/manager/incident-investigation.html', function (){
+							addEventListenersToTextareas();
+						});
+					}
+				},
+				{
+					name: 'SWAT | Primary Caregiver Version',
+					path: 'SWAT-primary-caregiver',
+					handler: function (req, res) {
+						res.file('/public/forms/SWAT-primary-caregiver.html', function () {
+							addEventListenerToRadio();
 						});
 					}
 				}

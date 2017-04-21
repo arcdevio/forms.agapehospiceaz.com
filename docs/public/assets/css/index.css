@@ -2,11 +2,6 @@
   margin: 0;
   padding: 0;
   font-size: 1rem;
-  transition: all 300ms ease;
-  -o-transition: all 300ms ease;
-  -ms-transition: all 300ms ease;
-  -moz-transition: all 300ms ease;
-  -webkit-transition: all 300ms ease;
   font-family: 'Open Sans', sans-serif;
 }
 body {
@@ -45,6 +40,7 @@ form textarea {
   margin: 0.5rem auto;
   background: #C1CAD6;
   height: auto;
+  overflow: hidden;
 }
 form input:focus,
 form textarea:focus,
@@ -136,4 +132,18 @@ button:hover {
   width: inherit;
   display: inline-block;
   margin: 0.5rem;
+}
+.total {
+  background-color: #b5eed7;
+  color: #4F4F4F;
+  padding: 1rem;
+  max-width: 33%;
+  font-weight: bold;
+}
+ol {
+  margin-left: 1rem;
+}
+ol li {
+  margin-top: 1rem;
+  font-weight: bold;
 }
