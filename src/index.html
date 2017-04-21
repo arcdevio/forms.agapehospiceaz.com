@@ -16,6 +16,7 @@
 	<script src="public/assets/js/jspdf.min.js"></script>
 	<script src="public/assets/js/html2canvas.min.js"></script>
 	<script src="index.js"></script>
+	<!-- http://rawgit.com/MrRio/jsPDF/master/docs/global.html -->
 </head>
 <body>
 	<header>
@@ -30,16 +31,16 @@
 
 	<script>
 
-	function pdf (element) {
-		html2canvas(element, {
-			onrendered: function (canvas) {
-				var img = canvas.toDataURL("image/png");
-				var doc = new jsPDF();
-				doc.addImage(img, 'JPEG',20,20);
-				doc.save(window.location.pathname + '.pdf');
-			}
-		});
-	}
+		function pdf (element) {
+			html2canvas(element, {
+				onrendered: function (canvas) {
+					var img = canvas.toDataURL("image/png");
+					var doc = new jsPDF();
+					doc.addImage(img, 'JPEG',20,20);
+					doc.save(window.location.pathname + '.pdf');
+				}
+			});
+		}
 
 		function addEventListenersToTextareas () {
 			var textareas = document.querySelectorAll('textarea');
