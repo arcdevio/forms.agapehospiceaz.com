@@ -40,32 +40,18 @@
 			}
 		});
 	}
-	function resize () {
-		var scrollHeight = this.scrollHeight;
-		// var initHeight = this.clientHeight;
-
-		this.style.height = 'auto';
-		this.style.height = scrollHeight + 'px';
-
-		// if (initHeight < scrollHeight) {
-		// 	console.log('not');
-		// } else {
-		// 	console.log('auto');
-		// 	// this.style.height = "auto";
-		// }
-
-	}
-	function delayedResize () {
-		window.setTimeout(resize.bind(this), 0);
-	}
 	function addEventListenersToTextareas () {
 		var textareas = document.querySelectorAll('textarea');
 		for (var i = 0; i < textareas.length; i++) {
-			textareas[i].addEventListener('cut', delayedResize);
-			textareas[i].addEventListener('paste', delayedResize);
-			textareas[i].addEventListener('copy', delayedResize);
-			textareas[i].addEventListener('change', resize);
-			textareas[i].addEventListener('keydown', delayedResize);
+			textareas[i].addEventListener('keyup', function(){
+				var scrollHeight = this.scrollHeight;
+				var initHeight = this.clientHeight;
+				if (initHeight < scrollHeight) {
+					this.style.height = scrollHeight + 'px';
+				} else {
+					this.style.height = 'auto';
+				}
+			});
 		}
 	}
 	function addEventListenerToRadio () {
