@@ -2,86 +2,38 @@
 <html>
 <head>
 	<meta name="robots" content="noindex, nofollow">
-	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title></title>
-	<link rel="stylesheet" href="public/assets/css/font-awesome.min.css">
-	<link rel="stylesheet" href="public/assets/css/flexboxgrid.min.css">
-	<link rel="stylesheet" href="public/assets/css/print.css">
-	<link rel="stylesheet" href="public/assets/css/index.css">
 
-	<script src="public/assets/js/swathe.min.js"></script>
-	<script src="public/assets/js/rutta.min.js"></script>
-	<script src="public/assets/js/jspdf.min.js"></script>
-	<script src="public/assets/js/html2canvas.min.js"></script>
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/flexboxgrid.min.css">
+	<link rel="stylesheet" href="assets/css/print.css">
+	<link rel="stylesheet" href="assets/css/index.css">
+
+	<script src="assets/js/jenie.polly.min.js"></script>
+	<script src="assets/js/jspdf.min.js"></script>
+	<script src="assets/js/html2canvas.min.js"></script>
+
+	<link rel="import" href="views/view-404.html">
+	<link rel="import" href="views/view-index.html">
+	<link rel="import" href="views/incident-report.html">
+	<link rel="import" href="views/swat-primary-caregiver.html">
+	<link rel="import" href="views/manager/incident-investigation.html">
+
 	<script src="index.js"></script>
+
+	<!-- http://rawgit.com/MrRio/jsPDF/master/docs/global.html -->
 </head>
 <body>
 	<header>
 	</header>
 
 	<main>
-		<div r-view="main"></div>
+		<j-view></j-views>
 	</main>
 
 	<footer>
 	</footer>
-
-	<script>
-
-	function pdf (element) {
-		html2canvas(element, {
-			onrendered: function (canvas) {
-				var img = canvas.toDataURL("image/png");
-				var doc = new jsPDF();
-				doc.addImage(img, 'JPEG',20,20);
-				doc.save(window.location.pathname + '.pdf');
-			}
-		});
-	}
-
-		function addEventListenersToTextareas () {
-			var textareas = document.querySelectorAll('textarea');
-			for (var i = 0; i < textareas.length; i++) {
-				textareas[i].addEventListener('focusin', function() {
-					this.style.height = '500px';
-				});
-				textareas[i].addEventListener('focusout', function() {
-					this.style.height = 'initial';
-				});
-			}
-		}
-
-		Rutta.router({
-			name: 'main',
-			routes: [
-				{
-					title: 'Agape Forms',
-					path: '/',
-					handler: function (req, res) {
-					 	return res.file('public/index.html', function (){
-						});
-					}
-				},
-				{
-					title: 'Incident Report',
-					path: '/incident-report',
-					handler: function (req, res) {
-						return res.file('/public/forms/incident-report.html', function () {
-							addEventListenersToTextareas();
-
-							var button = document.getElementById('download-btn');
-							button.addEventListener('click', function(){
-								pdf(document.querySelector('form'));
-							});
-
-						});
-					}
-				}
-			]
-		}).listen();
-	</script>
 
 </body>
 </html>

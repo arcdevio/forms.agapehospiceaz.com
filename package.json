@@ -20,8 +20,8 @@
     "flexboxgrid": "^6.3.1",
     "font-awesome": "^4.7.0",
     "fontawesome": "^4.7.2",
-    "jenie": "^1.0.3",
+    "jenie": "^1.0.4",
     "rutta": "^1.3.0",
-    "swathe": "^2.0.6"
+    "swathe": "^2.0.8"
   }
 }
