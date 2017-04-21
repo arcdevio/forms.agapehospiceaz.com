@@ -54,7 +54,7 @@
 							<input class="col-xs-8" type="text" name="Report Completed By" placeholder="Full Name">
 							<input class="col-xs-3" type="date" name="date">
 							<div class="no-print">
-								<button id="download-btn" type="button" name="button">Download PDF</button>
+								<button class="download-pdf" type="button" name="button">Download PDF</button>
 							</div>
 						</fieldset>
 					</fieldset>
@@ -69,7 +69,12 @@
 		name: 'incident-report',
 		template: 'template',
 		created: function () {
-			this.services.addEventListenersToTextareas(this.element);
+			var self = this;
+
+			self.services.addEventListenersToTextareas(self.element);
+			self.element.querySelector('.download-pdf').addEventListener('click', function () {
+				self.services.pdf(self.element.querySelector('form'));
+			});
 		}
 	});
 </script>

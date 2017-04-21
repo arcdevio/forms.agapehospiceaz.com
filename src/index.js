@@ -2,10 +2,29 @@
 Jenie.services.pdf = function (element) {
 	html2canvas(element, {
 		onrendered: function (canvas) {
-			var img = canvas.toDataURL("image/png");
-			var doc = new jsPDF();
-			doc.addImage(img, 'JPEG',20,20);
-			doc.save(window.location.pathname + '.pdf');
+			var imgData = canvas.toDataURL('image/png');
+			var imgWidth = 8;
+			var pageHeight = 11;
+			var imgHeight = canvas.height * imgWidth / canvas.width;
+			var heightLeft = imgHeight;
+
+			var doc = new jsPDF('p', 'in');
+			var positionTop = 0.125;
+			var positionLeft = 0.125;
+
+			doc.addImage(imgData, 'PNG', positionLeft, positionTop, imgWidth, imgHeight);
+			heightLeft -= pageHeight;
+
+			while (heightLeft >= 0) {
+				positionTop = heightLeft - imgHeight;
+				doc.addPage();
+				doc.addImage(imgData, 'PNG', positionLeft, positionTop, imgWidth, imgHeight);
+				heightLeft -= pageHeight;
+			}
+
+			var name = window.location.pathname.replace(/\//g, '-').replace(/^-/, '');
+			
+			doc.save(name + '.pdf');
 		}
 	});
 };
