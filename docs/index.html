@@ -2,133 +2,39 @@
 <html>
 <head>
 	<meta name="robots" content="noindex, nofollow">
-	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title></title>
-	<link rel="stylesheet" href="public/assets/css/font-awesome.min.css">
-	<link rel="stylesheet" href="public/assets/css/flexboxgrid.min.css">
-	<link rel="stylesheet" href="public/assets/css/print.css">
-	<link rel="stylesheet" href="public/assets/css/index.css">
 
-	<script src="public/assets/js/swathe.min.js"></script>
-	<script src="public/assets/js/rutta.min.js"></script>
-	<script src="public/assets/js/jspdf.min.js"></script>
-	<script src="public/assets/js/html2canvas.min.js"></script>
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/flexboxgrid.min.css">
+	<link rel="stylesheet" href="assets/css/print.css">
+	<link rel="stylesheet" href="index.css">
+
+	<script src="assets/js/jenie.polly.min.js"></script>
+	<script src="assets/js/jspdf.min.js"></script>
+	<script src="assets/js/html2canvas.min.js"></script>
+
+	<link rel="import" href="views/view-404.html">
+	<link rel="import" href="views/view-index.html">
+	<link rel="import" href="views/incident-report.html">
+	<link rel="import" href="views/swat-primary-caregiver.html">
+	<link rel="import" href="views/swat-patient-caregiver.html">
+	<link rel="import" href="views/swat-patient.html">
+	<link rel="import" href="views/manager/incident-investigation.html">
+
 	<script src="index.js"></script>
+
 </head>
 <body>
 	<header>
 	</header>
 
 	<main>
-		<div r-view="main"></div>
+		<j-view></j-views>
 	</main>
 
 	<footer>
 	</footer>
-
-	<script>
-
-	function pdf (element) {
-		html2canvas(element, {
-			onrendered: function (canvas) {
-				var img = canvas.toDataURL("image/png");
-				var doc = new jsPDF();
-				doc.addImage(img, 'JPEG',20,20);
-				doc.save(window.location.pathname + '.pdf');
-			}
-		});
-	}
-	function addEventListenersToTextareas () {
-		var textareas = document.querySelectorAll('textarea');
-		for (var i = 0; i < textareas.length; i++) {
-			textareas[i].addEventListener('keyup', function(){
-				var scrollHeight = this.scrollHeight;
-				var initHeight = this.clientHeight;
-				if (initHeight < scrollHeight) {
-					this.style.height = scrollHeight + 'px';
-				} else {
-					this.style.height = 'auto';
-				}
-			});
-		}
-	}
-	function addEventListenerToRadio () {
-		var radios = document.querySelectorAll('input[type=radio]');
-		var totalInput = document.querySelector('.total');
-		var sections = {};
-
-		for (var i = 0, l = radios.length; i < l; i++) {
-			radios[i].addEventListener('click', function (){
-				var total = 0;
-				sections[this.name] = parseInt(this.value);
-
-				for (var name in sections) {
-					total += sections[name];
-				}
-				console.log(total);
-				totalInput.innerText = total;
-
-			});
-		}
-	}
-
-		Rutta.router({
-			name: 'main',
-			routes: [
-				{
-					title: 'Agape Forms',
-					path: '/',
-					handler: function (req, res) {
-					 	return res.file('public/index.html', function (){
-						});
-					}
-				},
-				{
-					title: 'Incident Report',
-					path: '/incident-report',
-					handler: function (req, res) {
-						return res.file('/public/forms/incident-report.html', function () {
-							addEventListenersToTextareas();
-
-							// var button = document.getElementById('download-btn');
-							// button.addEventListener('click', function(){
-							// 	pdf(document.querySelector('form'));
-							// });
-
-						});
-					}
-				},
-				{
-					name: 'Incident Investigation/Follow Up',
-					path: '/manager/incident-investigation',
-					handler: function (req, res) {
-						res.file('/public/forms/manager/incident-investigation.html', function (){
-							addEventListenersToTextareas();
-						});
-					}
-				},
-				{
-					name: 'SWAT | Primary Caregiver Version',
-					path: 'SWAT-primary-caregiver',
-					handler: function (req, res) {
-						res.file('/public/forms/SWAT-primary-caregiver.html', function () {
-							addEventListenerToRadio();
-						});
-					}
-				},
-				{
-					path: /.*?/,
-					handler: function (req, res) {
-						res.file('/public/404.html', function (){
-							
-						});
-					}
-				}
-			]
-		}).listen();
-	</script>
 
 </body>
 </html>

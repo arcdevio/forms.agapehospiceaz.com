@@ -23,7 +23,7 @@ Jenie.services.pdf = function (element) {
 			}
 
 			var name = window.location.pathname.replace(/\//g, '-').replace(/^-/, '');
-			
+
 			doc.save(name + '.pdf');
 		}
 	});
@@ -84,6 +84,16 @@ Jenie.router.setup({
 			title: 'SWAT | Primary Caregiver Version',
 			path: '/swat-primary-caregiver',
 			component: 'swat-primary-caregiver'
+		},
+		{
+			title: 'SWAT | Patient',
+			path: '/swat-patient',
+			component: 'swat-patient'
+		},
+		{
+			title: 'SWAT | Patient/Caregiver',
+			path: '/swat-patient-caregiver',
+			component: 'swat-patient-caregiver'
 		},
 		{
 			title: '404',
