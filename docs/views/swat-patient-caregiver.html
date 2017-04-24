@@ -178,6 +178,14 @@
 <script>
 	Jenie.register({
 		name: 'swat-patient-caregiver',
-		template: 'template'
+		template: 'template',
+		created: function () {
+			var self = this;
+
+			self.services.addEventListenerToRadio();
+			self.element.querySelector('.download-pdf').addEventListener('click', function () {
+				self.services.pdf(self.element.querySelector('form'));
+			});
+		}
 	});
 </script>

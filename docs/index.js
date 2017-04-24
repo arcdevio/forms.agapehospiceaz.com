@@ -56,7 +56,7 @@ Jenie.services.addEventListenerToRadio = function () {
 			for (var name in sections) {
 				total += sections[name];
 			}
-
+			console.log('Clicked');
 			totalElement.innerText = total;
 		});
 	}
