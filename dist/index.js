@@ -81,6 +81,11 @@ Jenie.router.setup({
 			component: 'manager-incident-investigation'
 		},
 		{
+			title: 'Complaint/Grievance Form',
+			path: '/complaint',
+			component: 'view-complaint'
+		},
+		{
 			title: 'SWAT | Primary Caregiver Version',
 			path: '/swat-primary-caregiver',
 			component: 'swat-primary-caregiver'

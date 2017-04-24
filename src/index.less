@@ -4,6 +4,7 @@
 @black: #4F4F4F;
 @white: #ffffff;
 @red: #FC6959;
+@purple: #6d387a;
 *  {
 	margin: 0;
 	padding: 0;
@@ -24,16 +25,37 @@ main {
 	box-sizing: border-box;
 }
 header {
-	padding: 0rem 0rem 0rem 4.2rem;
-	background: @red;
+	background-color: @purple;
+	padding: 1rem;
+	color: white;
+	vertical-align: center;
+	h1 {
+		color: #fff;
+		padding-left: 0.5rem;
+	}
 	a {
-		color: lighten(@red, 20%);
+		:hover {
+			border-left: 1px solid white;
+		}
 	}
-	> div:first-child {
-		font-size: 2rem;
-		padding: 1rem;
+	> div {
 		display: inline-block;
+		margin-left: 2rem;
+		&:nth-child(1) {
+			margin-left: 0;
+		}
+		&:nth-child(2) {
+			width: 33%;
+		}
 	}
+}
+h1 {
+	font-size: 2rem;
+}
+h2 {
+	font-size: 1.7rem;
+	color: @black;
+	font-weight: lighter;
 }
 p {
 	margin: 0.5rem 0 0.5rem 0;
@@ -41,6 +63,12 @@ p {
 a {
 	text-decoration: none;
 	color: inherit;
+}
+hr {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	border: 1px solid @black;
+	border-style: solid;
 }
 form {
 	padding: 8px;
@@ -62,6 +90,15 @@ form input, form textarea {
 		outline: none;
 		border-bottom: 2px;
 	}
+}
+form input[type="date"] {
+	color: @black;
+	font-size: 0.8rem;
+}
+select {
+	padding: 1rem;
+	background: @gray;
+	border-image: none;
 }
 label {
 	display: block;
@@ -117,8 +154,10 @@ ol {
 .section-tiles {
 	padding: 6%;
 	> a {
+		cursor: pointer;
 		color: @red;
 		padding: 2rem;
+		min-height: 12rem;
 		background: white;
 		text-align: center;
 		vertical-align: top;
@@ -126,9 +165,13 @@ ol {
 		margin-right: 0.5rem;
 		margin-bottom: 0.5rem;
 		box-sizing: border-box;
-		box-shadow: 1px 1px 2px 0px darken(@light-grey, 10%);
+
 		&:hover {
-			box-shadow: 1px 1px 2px 2px darken(@light-grey, 10%);
+			box-shadow: 1px 1px 2px 2px darken(@light-grey, 20%);
+			border-top: 4px solid @purple;
+			border-left: none;
+			border-right: none;
+			border-bottom: none;
 		}
 		i {
 			display: block;

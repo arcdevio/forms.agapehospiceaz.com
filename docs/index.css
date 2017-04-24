@@ -18,16 +18,35 @@ main {
   box-sizing: border-box;
 }
 header {
-  padding: 0rem 0rem 0rem 4.2rem;
-  background: #FC6959;
-}
-header a {
-  color: #fec4bd;
-}
-header > div:first-child {
-  font-size: 2rem;
+  background-color: #6d387a;
   padding: 1rem;
+  color: white;
+  vertical-align: center;
+}
+header h1 {
+  color: #fff;
+  padding-left: 0.5rem;
+}
+header a :hover {
+  border-left: 1px solid white;
+}
+header > div {
   display: inline-block;
+  margin-left: 2rem;
+}
+header > div:nth-child(1) {
+  margin-left: 0;
+}
+header > div:nth-child(2) {
+  width: 33%;
+}
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.7rem;
+  color: #4F4F4F;
+  font-weight: lighter;
 }
 p {
   margin: 0.5rem 0 0.5rem 0;
@@ -35,6 +54,12 @@ p {
 a {
   text-decoration: none;
   color: inherit;
+}
+hr {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #4F4F4F;
+  border-style: solid;
 }
 form {
   padding: 8px;
@@ -60,6 +85,15 @@ form textarea:active {
   background: #ffffff;
   outline: none;
   border-bottom: 2px;
+}
+form input[type="date"] {
+  color: #4F4F4F;
+  font-size: 0.8rem;
+}
+select {
+  padding: 1rem;
+  background: #C1CAD6;
+  border-image: none;
 }
 label {
   display: block;
@@ -116,8 +150,10 @@ ol li {
   padding: 6%;
 }
 .section-tiles > a {
+  cursor: pointer;
   color: #FC6959;
   padding: 2rem;
+  min-height: 12rem;
   background: white;
   text-align: center;
   vertical-align: top;
@@ -125,10 +161,13 @@ ol li {
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
   box-sizing: border-box;
-  box-shadow: 1px 1px 2px 0px #dddddd;
 }
 .section-tiles > a:hover {
-  box-shadow: 1px 1px 2px 2px #dddddd;
+  box-shadow: 1px 1px 2px 2px #c3c3c3;
+  border-top: 4px solid #6d387a;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
 }
 .section-tiles > a i {
   display: block;
