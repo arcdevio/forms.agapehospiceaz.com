@@ -4,6 +4,8 @@
 		"browser": true
 	},
 	"globals": {
+		"html2canvas": false,
+		"jsPDF": false,
 		"Jenie": false
 	},
 	"parserOptions": {
