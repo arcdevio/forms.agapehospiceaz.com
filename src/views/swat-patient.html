@@ -93,7 +93,7 @@
 						</fieldset>
 
 						<div class="no-print">
-							<button id="download-btn" type="button" name="button">Download PDF</button>
+							<button class="download-pdf" type="button" name="button">Download PDF</button>
 						</div>
 						<div class="disclaimer">
 							<p>NOTE: To calculate total scores: add the score for each item in the patient column to get a total patient score. Add the score for each item in the primary caregiver column to get a total primary caregiver score. </p>
@@ -108,6 +108,15 @@
 <script>
 	Jenie.register({
 		name: 'swat-patient',
-		template: 'template'
+		template: 'template',
+		created: function () {
+			var self = this;
+			var selfServe = self.services;
+
+			self.services.addEventListenerToRadio(self.element);
+			self.element.querySelector('.download-pdf').addEventListener('click', function (){
+				selfServe.pdf(self.element.querySelector('form'));
+			});
+		}
 	});
 </script>

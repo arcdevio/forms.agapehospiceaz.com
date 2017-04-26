@@ -68,7 +68,7 @@
 		template: 'template',
 		created: function () {
 			var self = this;
-
+			
 			self.services.addEventListenersToTextareas(self.element);
 			self.element.querySelector('.download-pdf').addEventListener('click', function () {
 				self.services.pdf(self.element.querySelector('form'));

@@ -43,9 +43,9 @@ Jenie.services.addEventListenersToTextareas = function (element) {
 	}
 };
 
-Jenie.services.addEventListenerToRadio = function () {
-	var radios = document.querySelectorAll('input[type=radio]');
-	var totalElement = document.querySelector('.total');
+Jenie.services.addEventListenerToRadio = function (element) {
+	var radios = element.querySelectorAll('input[type=radio]');
+	var totalElement = element.querySelector('.total');
 	var sections = {};
 
 	for (var i = 0, l = radios.length; i < l; i++) {
