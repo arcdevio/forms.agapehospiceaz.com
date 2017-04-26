@@ -63,15 +63,15 @@
 </template>
 
 <script>
-	Jenie.register({
+	Jenie.component({
 		name: 'incident-report',
 		template: 'template',
 		created: function () {
 			var self = this;
-			
-			self.services.addEventListenersToTextareas(self.element);
+
+			Jenie.services.addEventListenersToTextareas(self.element);
 			self.element.querySelector('.download-pdf').addEventListener('click', function () {
-				self.services.pdf(self.element.querySelector('form'));
+				Jenie.services.pdf(self.element.querySelector('form'));
 			});
 		}
 	});

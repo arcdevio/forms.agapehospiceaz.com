@@ -176,12 +176,12 @@
 	</div>
 </template>
 <script>
-	Jenie.register({
+	Jenie.component({
 		name: 'swat-patient-caregiver',
 		template: 'template',
 		created: function () {
 			var self = this;
-			var selfServe = this.services;
+			var selfServe = Jenie.services;
 
 			selfServe.addEventListenerToRadio(self.element);
 			self.element.querySelector('.download-pdf').addEventListener('click', function () {

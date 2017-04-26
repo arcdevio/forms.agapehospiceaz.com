@@ -79,7 +79,7 @@
 						</fieldset>
 
 						<div class="no-print">
-							<button id="download-btn" type="button" name="button">Download PDF</button>
+							<button class="download-pdf" type="button" name="button">Download PDF</button>
 						</div>
 				</fieldset>
 			</form>
@@ -88,8 +88,19 @@
 </template>
 
 <script>
-	Jenie.register({
+	Jenie.component({
 		name: 'swat-primary-caregiver',
-		template: 'template'
+		template: 'template',
+		created: function () {
+			var self = this;
+			var selfServe = Jenie.services;
+
+			selfServe.addEventListenersToTextareas(self.element);
+			selfServe.addEventListenerToRadio(self.element);
+
+			self.element.querySelector('.download-pdf').addEventListener('click', function () {
+				selfServe.pdf(self.element.querySelector('form'));
+			});
+		}
 	});
 </script>

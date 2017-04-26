@@ -62,7 +62,7 @@ Jenie.services.addEventListenerToRadio = function (element) {
 	}
 };
 
-Jenie.router.setup({
+Jenie.router({
 	base: '/',
 	routes: [
 		{

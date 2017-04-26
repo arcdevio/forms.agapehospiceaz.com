@@ -88,12 +88,12 @@
 </template>
 
 <script>
-	Jenie.register({
+	Jenie.component({
 		name: 'swat-primary-caregiver',
 		template: 'template',
 		created: function () {
 			var self = this;
-			var selfServe = self.services;
+			var selfServe = Jenie.services;
 
 			selfServe.addEventListenersToTextareas(self.element);
 			selfServe.addEventListenerToRadio(self.element);

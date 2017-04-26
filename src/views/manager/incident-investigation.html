@@ -25,12 +25,12 @@
 </template>
 
 <script>
-	Jenie.register({
+	Jenie.component({
 		name: 'manager-incident-investigation',
 		template: 'template',
 		created: function () {
 			var self = this;
-			var selfServe = self.services;
+			var selfServe = Jenie.services;
 			var element = self.element;
 
 			selfServe.addEventListenersToTextareas(element);
