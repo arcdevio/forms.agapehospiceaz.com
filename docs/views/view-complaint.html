@@ -28,9 +28,9 @@
 						<input class="col-xs-7" type="text" name="Completed By" placeholder="Name">
 						<input class="col-xs-4" type="date" name="Completed By Date" placeholder="Date">
 
-						<div class="no-print">
+						<!-- <div class="no-print">
 							<button class="download-pdf" type="button" name="button">Download PDF</button>
-						</div>
+						</div> -->
 					</fieldset>
 				</fieldset>
 			</form>
@@ -46,9 +46,9 @@
 			var self = this;
 
 			Jenie.services.addEventListenersToTextareas(self.element);
-			self.element.querySelector('.download-pdf').addEventListener('click', function () {
-				Jenie.services.pdf(self.element.querySelector('form'));
-			});
+			// self.element.querySelector('.download-pdf').addEventListener('click', function () {
+			// 	Jenie.services.pdf(self.element.querySelector('form'));
+			// });
 		}
 	});
 </script>

@@ -17,9 +17,9 @@
 						<input class="col-xs-8" type="text" name="Investigation Completed By" placeholder="Manager Full Name">
 						<input class="col-xs-3" type="date" name="date">
 					</fieldset>
-					<div class="no-print">
+					<!-- <div class="no-print">
 						<button class="download-pdf" type="button" name="button">Download PDF</button>
-					</div>
+					</div> -->
 				</fieldset>
 			</form>
 		</div>
@@ -36,9 +36,9 @@
 			var element = self.element;
 
 			selfServe.addEventListenersToTextareas(element);
-			self.element.querySelector('.download-pdf').addEventListener('click', function (){
-				selfServe.pdf(self.element.querySelector('form'));
-			});
+			// self.element.querySelector('.download-pdf').addEventListener('click', function (){
+			// 	selfServe.pdf(self.element.querySelector('form'));
+			// });
 		}
 	});
 </script>

@@ -78,9 +78,9 @@
 							<div class="total">0</div>
 						</fieldset>
 
-						<div class="no-print">
+						<!-- <div class="no-print">
 							<button class="download-pdf" type="button" name="button">Download PDF</button>
-						</div>
+						</div> -->
 				</fieldset>
 			</form>
 		</div>
@@ -98,9 +98,9 @@
 			selfServe.addEventListenersToTextareas(self.element);
 			selfServe.addEventListenerToRadio(self.element);
 
-			self.element.querySelector('.download-pdf').addEventListener('click', function () {
-				selfServe.pdf(self.element.querySelector('form'));
-			});
+			// self.element.querySelector('.download-pdf').addEventListener('click', function () {
+			// 	selfServe.pdf(self.element.querySelector('form'));
+			// });
 		}
 	});
 </script>
