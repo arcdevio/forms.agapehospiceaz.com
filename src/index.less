@@ -81,11 +81,12 @@ form input, form textarea {
 	border-style: none;
 	padding: 0.5rem;
 	margin: 0.5rem auto;
-	background: @gray;
+	background: @light-grey;
 	height: auto;
 	overflow: hidden;
 	width: 100%;
-	&:focus, &:active {
+	font-size: 0.8rem;
+	&:focus, &:active, &:visited {
 		background: @white;
 		outline: none;
 		border-bottom: 2px;
@@ -165,13 +166,15 @@ ol {
 		margin-right: 0.5rem;
 		margin-bottom: 0.5rem;
 		box-sizing: border-box;
+		box-shadow: 1px 1px 2px 2px darken(@light-grey, 20%);
+		border-top: 4px solid @purple;
+		border-left: none;
+		border-right: none;
+		border-bottom: none;
 
 		&:hover {
-			box-shadow: 1px 1px 2px 2px darken(@light-grey, 20%);
-			border-top: 4px solid @purple;
-			border-left: none;
-			border-right: none;
-			border-bottom: none;
+			box-shadow: none;
+			border-top: 2px solid @purple;
 		}
 		i {
 			display: block;

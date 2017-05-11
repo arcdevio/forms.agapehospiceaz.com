@@ -52,11 +52,28 @@ Jenie.services.addEventListenerToRadio = function (element) {
 		radios[i].addEventListener('click', function (){
 			sections[this.name] = parseInt(this.value);
 			var total = 0;
-
 			for (var name in sections) {
 				total += sections[name];
 			}
 			console.log('Clicked');
+			totalElement.innerText = total;
+		});
+	}
+};
+Jenie.services.addEventListenerToCheckbox = function (element) {
+	var checkbox = element.querySelectorAll('input[type=checkbox]');
+	var totalElement = element.querySelector('.total');
+	var sections = {};
+
+	for (var i = 0, l = checkbox.length; i < l; i++) {
+		checkbox[i].addEventListener('click', function (){
+			sections[this.name] = parseInt(this.value);
+			var total = 0;
+			// console.log(sections);
+			for (var name in sections) {
+				total += sections[name];
+			}
+			// console.log(total);
 			totalElement.innerText = total;
 		});
 	}
@@ -71,6 +88,16 @@ Jenie.router({
 			component: 'view-index'
 		},
 		{
+			title: 'Complaint/Grievance Form',
+			path: '/complaint',
+			component: 'view-complaint'
+		},
+		{
+			title: 'Timeoff Request Form',
+			path: '/timeoff-request',
+			component: 'view-timeoff-request'
+		},
+		{
 			title: 'Incident Report',
 			path: '/incident-report',
 			component: 'incident-report'
@@ -79,11 +106,6 @@ Jenie.router({
 			title: 'Manager Incident Investigation',
 			path: '/manager/incident-investigation',
 			component: 'manager-incident-investigation'
-		},
-		{
-			title: 'Complaint/Grievance Form',
-			path: '/complaint',
-			component: 'view-complaint'
 		},
 		{
 			title: 'SWAT | Primary Caregiver Version',
@@ -99,6 +121,11 @@ Jenie.router({
 			title: 'SWAT | Patient/Caregiver',
 			path: '/swat-patient-caregiver',
 			component: 'swat-patient-caregiver'
+		},
+		{
+			title: 'MAHC 10',
+			path: '/mahc-10',
+			component: 'view-mahc-10'
 		},
 		{
 			title: '404',

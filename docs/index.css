@@ -73,15 +73,18 @@ form textarea {
   border-style: none;
   padding: 0.5rem;
   margin: 0.5rem auto;
-  background: #C1CAD6;
+  background: #f6f6f6;
   height: auto;
   overflow: hidden;
   width: 100%;
+  font-size: 0.8rem;
 }
 form input:focus,
 form textarea:focus,
 form input:active,
-form textarea:active {
+form textarea:active,
+form input:visited,
+form textarea:visited {
   background: #ffffff;
   outline: none;
   border-bottom: 2px;
@@ -161,13 +164,15 @@ ol li {
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
   box-sizing: border-box;
-}
-.section-tiles > a:hover {
   box-shadow: 1px 1px 2px 2px #c3c3c3;
   border-top: 4px solid #6d387a;
   border-left: none;
   border-right: none;
   border-bottom: none;
+}
+.section-tiles > a:hover {
+  box-shadow: none;
+  border-top: 2px solid #6d387a;
 }
 .section-tiles > a i {
   display: block;
