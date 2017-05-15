@@ -1,86 +1,57 @@
 
-Jenie.services.pdf = function (element) {
-	html2canvas(element, {
-		onrendered: function (canvas) {
-			var imgData = canvas.toDataURL('image/png');
-			var imgWidth = 8;
-			var pageHeight = 11;
-			var imgHeight = canvas.height * imgWidth / canvas.width;
-			var heightLeft = imgHeight;
-
-			var doc = new jsPDF('p', 'in');
-			var positionTop = 0.125;
-			var positionLeft = 0.125;
-
-			doc.addImage(imgData, 'PNG', positionLeft, positionTop, imgWidth, imgHeight);
-			heightLeft -= pageHeight;
-
-			while (heightLeft >= 0) {
-				positionTop = heightLeft - imgHeight;
-				doc.addPage();
-				doc.addImage(imgData, 'PNG', positionLeft, positionTop, imgWidth, imgHeight);
-				heightLeft -= pageHeight;
-			}
-
-			var name = window.location.pathname.replace(/\//g, '-').replace(/^-/, '');
-
-			doc.save(name + '.pdf');
-		}
-	});
-};
-
-Jenie.services.addEventListenersToTextareas = function (element) {
-	var textareas = element.querySelectorAll('textarea');
-
-	for (var i = 0, l = textareas.length; i < l; i++) {
-		textareas[i].addEventListener('keyup', function(){
-			if (this.clientHeight < this.scrollHeight) {
-				this.style.height = this.scrollHeight + 'px';
-			} else {
-				this.style.height = 'auto';
-			}
-		});
-	}
-};
-
-Jenie.services.addEventListenerToRadio = function (element) {
-	var radios = element.querySelectorAll('input[type=radio]');
-	var totalElement = element.querySelector('.total');
-	var sections = {};
-
-	for (var i = 0, l = radios.length; i < l; i++) {
-		radios[i].addEventListener('click', function (){
-			sections[this.name] = parseInt(this.value);
-			var total = 0;
-			for (var name in sections) {
-				total += sections[name];
-			}
-			console.log('Clicked');
-			totalElement.innerText = total;
-		});
-	}
-};
-Jenie.services.addEventListenerToCheckbox = function (element) {
-	var checkbox = element.querySelectorAll('input[type=checkbox]');
-	var totalElement = element.querySelector('.total');
-	var sections = {};
-
-	for (var i = 0, l = checkbox.length; i < l; i++) {
-		checkbox[i].addEventListener('click', function (){
-			sections[this.name] = parseInt(this.value);
-			var total = 0;
-			// console.log(sections);
-			for (var name in sections) {
-				total += sections[name];
-			}
-			// console.log(total);
-			totalElement.innerText = total;
-		});
-	}
-};
+// Jenie.services.addEventListenersToTextareas = function (element) {
+// 	var textareas = element.querySelectorAll('textarea');
+//
+// 	for (var i = 0, l = textareas.length; i < l; i++) {
+// 		textareas[i].addEventListener('keyup', function(){
+// 			if (this.clientHeight < this.scrollHeight) {
+// 				this.style.height = this.scrollHeight + 'px';
+// 			} else {
+// 				this.style.height = 'auto';
+// 			}
+// 		});
+// 	}
+// };
+//
+// Jenie.services.addEventListenerToRadio = function (element) {
+// 	var radios = element.querySelectorAll('input[type=radio]');
+// 	var totalElement = element.querySelector('.total');
+// 	var sections = {};
+//
+// 	for (var i = 0, l = radios.length; i < l; i++) {
+// 		radios[i].addEventListener('click', function (){
+// 			sections[this.name] = parseInt(this.value);
+// 			var total = 0;
+// 			for (var name in sections) {
+// 				total += sections[name];
+// 			}
+// 			console.log('Clicked');
+// 			totalElement.innerText = total;
+// 		});
+// 	}
+// };
+//
+// Jenie.services.addEventListenerToCheckbox = function (element) {
+// 	var checkbox = element.querySelectorAll('input[type=checkbox]');
+// 	var totalElement = element.querySelector('.total');
+// 	var sections = {};
+//
+// 	for (var i = 0, l = checkbox.length; i < l; i++) {
+// 		checkbox[i].addEventListener('click', function (){
+// 			sections[this.name] = parseInt(this.value);
+// 			var total = 0;
+// 			// console.log(sections);
+// 			for (var name in sections) {
+// 				total += sections[name];
+// 			}
+// 			// console.log(total);
+// 			totalElement.innerText = total;
+// 		});
+// 	}
+// };
 
 Jenie.router({
-	base: '/',
+	hash: true,
 	routes: [
 		{
 			path: '/',
@@ -88,14 +59,14 @@ Jenie.router({
 			component: 'view-index'
 		},
 		{
-			title: 'Complaint/Grievance Form',
-			path: '/complaint',
-			component: 'view-complaint'
+			title: 'Complaint Or Grievance',
+			path: '/complaint-grievance',
+			component: 'complaint-grievance'
 		},
 		{
-			title: 'Timeoff Request Form',
-			path: '/timeoff-request',
-			component: 'view-timeoff-request'
+			title: 'Time Off Request',
+			path: '/time-off-request',
+			component: 'time-off-request'
 		},
 		{
 			title: 'Incident Report',
@@ -125,7 +96,17 @@ Jenie.router({
 		{
 			title: 'MAHC 10',
 			path: '/mahc-10',
-			component: 'view-mahc-10'
+			component: 'mahc-10'
+		},
+		{
+			title: 'Notice Of Medicare Non-Coverage',
+			path: '/notice-medicare-non-coverage',
+			component: 'notice-medicare-non-coverage'
+		},
+		{
+			title: 'Revocation Of Benefit',
+			path: '/revocation-benefit',
+			component: 'revocation-benefit'
 		},
 		{
 			title: '404',

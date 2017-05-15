@@ -1,5 +1,6 @@
+
 <template>
-	<div class="row">
+	<!-- <div class="row">
 		<div class="col-xs-12 form-sec">
 			<form>
 				<fieldset>
@@ -86,27 +87,16 @@
 							<div class="total">0</div>
 						</fieldset>
 					</fieldset>
-
-					<!-- <div class="no-print">
-						<button class="download-pdf" type="button" name="button">Download PDF</button>
-					</div> -->
 				</fieldset>
 			</form>
 		</div>
-	</div>
+	</div> -->
+	<iframe src="https://docs.google.com/a/agapehospiceaz.com/forms/d/e/1FAIpQLSeastv--lrS9THWz9QTBU7Zg4p8YEisaE13XuccSPVlakEu7w/viewform?embedded=true" frameborder="0"></iframe>
 </template>
+
 <script>
 	Jenie.component({
-		name: 'view-mahc-10',
-		template: 'template',
-		created: function () {
-			var self = this;
-
-			Jenie.services.addEventListenersToTextareas(self.element);
-			Jenie.services.addEventListenerToCheckbox(self.element);
-			// self.element.querySelector('.download-pdf').addEventListener('click', function () {
-			// 	Jenie.services.pdf(self.element.querySelector('form'));
-			// });
-		}
+		name: 'mahc-10',
+		template: 'template'
 	});
 </script>

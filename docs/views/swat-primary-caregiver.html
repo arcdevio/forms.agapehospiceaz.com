@@ -1,5 +1,6 @@
+
 <template>
-	<div class="row">
+	<!-- <div class="row">
 		<div class="col-xs-12 form-sec">
 			<h3>Primary Caregiver Version</h3>
 			<form>
@@ -77,30 +78,16 @@
 							<legend>Total Patient Score</legend>
 							<div class="total">0</div>
 						</fieldset>
-
-						<!-- <div class="no-print">
-							<button class="download-pdf" type="button" name="button">Download PDF</button>
-						</div> -->
 				</fieldset>
 			</form>
 		</div>
-	</div>
+	</div> -->
+	<iframe src="https://docs.google.com/a/agapehospiceaz.com/forms/d/e/1FAIpQLSdIpR1snN6fLAcw_nYCqomlVHDnDUdADPJ5hTU6gtR3XyDaow/viewform?embedded=true" frameborder="0"></iframe>
 </template>
 
 <script>
 	Jenie.component({
 		name: 'swat-primary-caregiver',
-		template: 'template',
-		created: function () {
-			var self = this;
-			var selfServe = Jenie.services;
-
-			selfServe.addEventListenersToTextareas(self.element);
-			selfServe.addEventListenerToRadio(self.element);
-
-			// self.element.querySelector('.download-pdf').addEventListener('click', function () {
-			// 	selfServe.pdf(self.element.querySelector('form'));
-			// });
-		}
+		template: 'template'
 	});
 </script>

@@ -1,18 +1,19 @@
 {
   "name": "forms.agapehospiceaz.com",
   "version": "1.0.0",
-  "description": "forms.agapehospiceaz.com",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-	"cp": "cp node_modules/jenie/dist/jenie.polly.min.js src/assets/js/."
+    "serve": "muleify serve -ws src dist",
+    "cp": "cp node_modules/jenie/dist/jenie.polly.min.js src/assets/js/.",
+	"build": "rm -r dist/* && rm -r docs/* && muleify pack src dist && muleify pack src docs"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/WebCab-Design/forms.agapehospiceaz.com.git"
   },
   "author": "WebCab",
-  "license": "ISC",
+  "license": "SEE LICENSE IN LICENSE",
   "bugs": {
     "url": "https://github.com/WebCab-Design/forms.agapehospiceaz.com/issues"
   },
@@ -21,8 +22,6 @@
     "flexboxgrid": "^6.3.1",
     "font-awesome": "^4.7.0",
     "fontawesome": "^4.7.2",
-    "jenie": "^1.0.93",
-    "rutta": "^1.3.0",
-    "swathe": "^2.0.8"
+    "jenie": "^1.1.1"
   }
 }

@@ -1,5 +1,5 @@
 <template>
-	<div class="row">
+	<!-- <div class="row">
 		<div class="col-xs-12 form-sec">
 			<form>
 				<fieldset>
@@ -27,28 +27,17 @@
 						<label for="Completed By">Complaint Form Completed by:</label>
 						<input class="col-xs-7" type="text" name="Completed By" placeholder="Name">
 						<input class="col-xs-4" type="date" name="Completed By Date" placeholder="Date">
-
-						<!-- <div class="no-print">
-							<button class="download-pdf" type="button" name="button">Download PDF</button>
-						</div> -->
 					</fieldset>
 				</fieldset>
 			</form>
 		</div>
-	</div>
+	</div> -->
+	<iframe src="https://docs.google.com/a/agapehospiceaz.com/forms/d/e/1FAIpQLSc0D8oaE8n65xhk7DjDQMksd4zQ_nN_wd-Qu3FFUYQkh1gjHg/viewform?embedded=true" frameborder="0"></iframe>
 </template>
 
 <script>
 	Jenie.component({
-		name: 'view-complaint',
-		template: 'template',
-		created: function () {
-			var self = this;
-
-			Jenie.services.addEventListenersToTextareas(self.element);
-			// self.element.querySelector('.download-pdf').addEventListener('click', function () {
-			// 	Jenie.services.pdf(self.element.querySelector('form'));
-			// });
-		}
+		name: 'complaint-grievance',
+		template: 'template'
 	});
 </script>

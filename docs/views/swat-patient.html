@@ -1,5 +1,6 @@
+
 <template>
-	<div class="row">
+	<!-- <div class="row">
 		<div class="col-xs-12 form-sec">
 			<h3>Patient Version</h3>
 			<form>
@@ -91,10 +92,6 @@
 							<legend>Total Patient Score</legend>
 							<div class="total">0</div>
 						</fieldset>
-
-						<!-- <div class="no-print">
-							<button class="download-pdf" type="button" name="button">Download PDF</button>
-						</div> -->
 						<div class="disclaimer">
 							<p>NOTE: To calculate total scores: add the score for each item in the patient column to get a total patient score. Add the score for each item in the primary caregiver column to get a total primary caregiver score. </p>
 							<p>The Social Work Assessment Tool was developed by the Social Work Outcomes Task Force of the Social Work Section, National Hospice and Palliative Care Organization, National Council of Hospice and Palliative Professionals. Members of the Task Force included Mary Raymer, ACSW, Dona Reese, Ph.D., MSW, Ruth Huber, Ph.D., MSW, Stacy Orloff, Ed. D., LCSW, and Susan Gerbino, Ph.D., MSW. Further information can be obtained f om the Social Worker Section, National Council of Hospice and Palliative Professionals, National Hospice and Palliative Care Organization, (703) 837-1500. </p>
@@ -103,20 +100,13 @@
 				</fieldset>
 			</form>
 		</div>
-	</div>
+	</div> -->
+	<iframe src="https://docs.google.com/a/agapehospiceaz.com/forms/d/e/1FAIpQLSeiEBMrD0UtHQEJqMXJhLEp-55YdhXeUwX0EUezjePA-3ZAbw/viewform?embedded=true" frameborder="0"></iframe>
 </template>
+
 <script>
 	Jenie.component({
 		name: 'swat-patient',
-		template: 'template',
-		created: function () {
-			var self = this;
-			var selfServe = Jenie.services;
-
-			selfServe.addEventListenerToRadio(self.element);
-			// self.element.querySelector('.download-pdf').addEventListener('click', function (){
-			// 	selfServe.pdf(self.element.querySelector('form'));
-			// });
-		}
+		template: 'template'
 	});
 </script>
