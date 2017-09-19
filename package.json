@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "muleify serve -ws src dist",
     "cp": "cp node_modules/jenie/dist/jenie.polly.min.js src/assets/js/.",
-    "build": "rm -r dist/* && rm -r docs/* && muleify pack src dist && muleify pack src docs"
+    "build": "rm -r docs/* && muleify pack src docs"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,6 @@
     "flexboxgrid": "^6.3.1",
     "font-awesome": "^4.7.0",
     "fontawesome": "^4.7.2",
-    "jenie": "^1.1.3"
+    "jenie": "^1.6.9"
   }
 }
