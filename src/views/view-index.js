@@ -17,6 +17,11 @@ Jenie.component({
 				<i class="fa fa-file-text"></i>
 				<h3>Time Off Request</h3>
 			</a>
+			<a href="/sick-call">
+				<i class="fa fa-file-text"></i>
+				<h3>Sick Call</h3>
+				<span>(managers only)</span>
+			</a>
 		</div>
 		<div class="section-tiles">
 			<h2>Patient Forms</h2>

@@ -32,6 +32,12 @@ Jenie.setup({
 				file: '/views/incident-report.js'
 			},
 			{
+				path: '/sick-call',
+				title: 'Sick Call',
+				component: 'sick-call',
+				file: '/views/manager/sick-call.js'
+			},
+			{
 				path: '/manager/incident-investigation',
 				title: 'Manager Incident Investigation',
 				component: 'manager-incident-investigation',
