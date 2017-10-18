@@ -1,89 +1,91 @@
-Jenie.setup({
+// Oxe.globals = {};
+
+Oxe.setup({
 	router: {
 		routes: [
 			{
 				path: '/',
 				title: 'Agape Forms',
 				component: 'view-index',
-				file: '/views/view-index.js'
+				url: '/views/view-index.js'
 			},
 			{
 				path: '/complaint-grievance',
 				title: 'Complaint Or Grievance',
 				component: 'complaint-grievance',
-				file: '/views/complaint-grievance.js'
+				url: '/views/complaint-grievance.js'
 			},
 			{
 				path: '/manager/complaint-investigation',
 				title: 'Complaint Investigation',
 				component: 'manager-complaint-investigation',
-				file: '/views/manager/complaint-investigation.js'
+				url: '/views/manager/complaint-investigation.js'
 			},
 			{
 				path: '/time-off-request',
 				title: 'Time Off Request',
 				component: 'time-off-request',
-				file: '/views/time-off-request.js'
+				url: '/views/time-off-request.js'
 			},
 			{
 				path: '/incident-report',
 				title: 'Incident Report',
 				component: 'incident-report',
-				file: '/views/incident-report.js'
+				url: '/views/incident-report.js'
 			},
 			{
 				path: '/sick-call',
 				title: 'Sick Call',
 				component: 'sick-call',
-				file: '/views/manager/sick-call.js'
+				url: '/views/manager/sick-call.js'
 			},
 			{
 				path: '/manager/incident-investigation',
 				title: 'Manager Incident Investigation',
 				component: 'manager-incident-investigation',
-				file: '/views/manager/incident-investigation.js'
+				url: '/views/manager/incident-investigation.js'
 			},
 			{
 				path: '/swat-primary-caregiver',
 				title: 'SWAT | Primary Caregiver Version',
 				component: 'swat-primary-caregiver',
-				file: '/views/swat-primary-caregiver.js'
+				url: '/views/swat-primary-caregiver.js'
 			},
 			{
 				path: '/swat-patient',
 				title: 'SWAT | Patient',
 				component: 'swat-patient',
-				file: '/views/swat-patient.js'
+				url: '/views/swat-patient.js'
 			},
 			{
 				path: '/swat-patient-caregiver',
 				title: 'SWAT | Patient/Caregiver',
 				component: 'swat-patient-caregiver',
-				file: '/views/swat-patient-caregiver.js'
+				url: '/views/swat-patient-caregiver.js'
 			},
 			{
 				path: '/mahc-10',
 				title: 'MAHC 10',
 				component: 'mahc-10',
-				file: '/views/mahc-10.js'
+				url: '/views/mahc-10.js'
 			},
 			{
 				path: '/notice-medicare-non-coverage',
 				title: 'Notice Of Medicare Non-Coverage',
 				component: 'notice-medicare-non-coverage',
-				file: '/views/notice-medicare-non-coverage.js'
+				url: '/views/notice-medicare-non-coverage.js'
 			},
 			{
 				path: '/revocation-benefit',
 				title: 'Revocation Of Benefit',
 				component: 'revocation-benefit',
-				file: '/views/revocation-benefit.js'
+				url: '/views/revocation-benefit.js'
 			},
 			{
 				path: /.*?/,
 				title: '404',
 				component: 'view-404',
-				file: '/views/view-404.js'
+				url: '/views/view-404.js'
 			}
 		]
 	}

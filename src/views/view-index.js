@@ -1,6 +1,6 @@
-Jenie.component({
+Oxe.component.define({
 	name: 'view-index',
-	template: `
+	html: `
 		<div class="section-tiles">
 			<h2>Company Forms</h2>
 			<hr>
