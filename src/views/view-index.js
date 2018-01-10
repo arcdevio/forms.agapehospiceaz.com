@@ -22,6 +22,10 @@ Oxe.component.define({
 				<h3>Sick Call</h3>
 				<span>(managers only)</span>
 			</a>
+			<a href="/call-report">
+				<i class="fa fa-file-text"></i>
+				<h3>Call Report</h3>
+			</a>
 		</div>
 		<div class="section-tiles">
 			<h2>Patient Forms</h2>

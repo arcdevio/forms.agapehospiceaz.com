@@ -82,6 +82,12 @@ Oxe.setup({
 				url: '/views/revocation-benefit.js'
 			},
 			{
+				path: '/call-report',
+				title: 'Call Report',
+				component: 'call-report',
+				url: '/views/call-report.js'
+			},
+			{
 				path: /.*?/,
 				title: '404',
 				component: 'view-404',
