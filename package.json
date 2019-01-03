@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "muleify serve -ws src dist",
+    "serve": "muleify -ws src dist",
     "cp": "cp node_modules/oxe/dist/oxe.polly.min.js src/assets/js/.",
     "build": "rm -r docs/* && muleify pack src docs"
   },
