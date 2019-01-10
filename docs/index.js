@@ -88,6 +88,12 @@ Oxe.setup({
 				url: '/views/call-report.js'
 			},
 			{
+				path: '/on-call-summary',
+				title: 'On Call Summary',
+				component: 'on-call-summary',
+				url: '/views/on-call-summary.js'
+			},
+			{
 				path: /.*?/,
 				title: '404',
 				component: 'view-404',

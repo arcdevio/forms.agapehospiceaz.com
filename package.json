@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "muleify -ws src dist",
+    "s": "muleify -ws src dist",
     "cp": "cp node_modules/oxe/dist/oxe.polly.min.js src/assets/js/.",
-    "build": "rm -r docs/* && muleify pack src docs"
+    "b": "rm -r docs/* && muleify -p src docs"
   },
   "repository": {
     "type": "git",
