@@ -47,6 +47,10 @@ Oxe.component.define({
 				<i class="fa fa-file-text"></i>
 				<h3>MAHC 10</h3>
 			</a>
+			<a href="/supply-order">
+				<i class="fa fa-file-text"></i>
+				<h3>Supply Order</h3>
+			</a>
 		</div>
 		<div class="section-tiles">
 			<h2>Social Work</h2>

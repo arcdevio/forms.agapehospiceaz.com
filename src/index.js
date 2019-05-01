@@ -94,6 +94,12 @@ Oxe.setup({
 				url: '/views/on-call-summary.js'
 			},
 			{
+				path: '/supply-order',
+				title: 'Supply Order',
+				component: 'supply-order',
+				url: '/views/supply-order.js'
+			},
+			{
 				path: /.*?/,
 				title: '404',
 				component: 'view-404',
